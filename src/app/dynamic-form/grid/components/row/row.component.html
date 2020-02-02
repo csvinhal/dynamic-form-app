@@ -1,0 +1,12 @@
+<div class="row">
+  <ng-container *ngFor="let dynamicConfig of dynamicConfigs">
+    <div [ngClass]="getColClass(dynamicConfig)">
+      <ng-container
+        *appFieldDirective="{
+          fieldConfig: dynamicConfig,
+          formGroup: formGroup
+        }"
+      ></ng-container>
+    </div>
+  </ng-container>
+</div>
