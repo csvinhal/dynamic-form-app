@@ -1,3 +1,4 @@
 export enum FieldType {
-  INPUT = "INPUT"
+  INPUT = "INPUT",
+  TEXT_AREA = "TEXT_AREA"
 }

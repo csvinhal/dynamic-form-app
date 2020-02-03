@@ -1,11 +1,11 @@
 import { GridType } from "./grid-type";
 
 export interface GridDto {
-  gridType: GridType;
+  gridType?: GridType;
 }
 
 export class Grid implements GridDto {
-  public gridType: GridType;
+  public gridType?: GridType;
 
   constructor(dto: GridDto) {
     Object.assign(this, dto);

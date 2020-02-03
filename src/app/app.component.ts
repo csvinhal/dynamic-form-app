@@ -6,10 +6,9 @@ import {
   isGridConfig
 } from "./dynamic-form/dynamic-config";
 import { FieldConfigType } from "./dynamic-form/fields/configuration/field-config";
-import { FieldType } from "./dynamic-form/fields/models/field-type";
 import { InputField } from "./dynamic-form/fields/models/input-field";
+import { TextAreaField } from "./dynamic-form/fields/models/text-area-field";
 import { GridConfigType } from "./dynamic-form/grid/configuration/grid-config";
-import { GridType } from "./dynamic-form/grid/models/grid-type";
 import { Row } from "./dynamic-form/grid/models/row";
 
 @Component({
@@ -53,19 +52,22 @@ export class AppComponent implements OnInit {
   public getFormFields(): DynamicConfigType[] {
     return [
       new Row({
-        gridType: GridType.ROW,
         fields: [
           new InputField({
             type: "text",
-            fieldType: FieldType.INPUT,
             name: "username",
             label: "Login"
           }),
           new InputField({
             type: "email",
-            fieldType: FieldType.INPUT,
             name: "email",
             label: "E-mail"
+          }),
+          new TextAreaField({
+            name: "email",
+            label: "E-mail",
+            rows: 3,
+            size: { md: 12, lg: 12, xl: 12 }
           })
         ]
       })

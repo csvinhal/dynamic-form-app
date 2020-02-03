@@ -1,6 +1,6 @@
 <div class="row">
   <ng-container *ngFor="let dynamicConfig of dynamicConfigs">
-    <div [ngClass]="getColClass(dynamicConfig)">
+    <div class="mb-2" [ngClass]="getColClass(dynamicConfig)">
       <ng-container
         *appFieldDirective="{
           fieldConfig: dynamicConfig,

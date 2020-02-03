@@ -4,7 +4,7 @@ import { FieldType } from "./field-type";
 export interface FieldDto {
   id?: string;
   name: string;
-  fieldType: FieldType;
+  fieldType?: FieldType;
   label: string;
   size?: ColSize;
 }
@@ -13,7 +13,7 @@ export class Field implements FieldDto {
   public id: string;
   public name: string;
   public label: string;
-  public fieldType: FieldType;
+  public fieldType?: FieldType;
   public size?: ColSize;
 
   constructor(dto: FieldDto) {

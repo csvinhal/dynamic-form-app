@@ -1,20 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
-  <div class="navbar-brand">Navbar</div>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-</nav>
+<header role="heading">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+    <div class="navbar-brand">Navbar</div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</header>
 
-<div class="container">
-  <app-dynamic-form
-    [dynamicConfigs]="dynamicConfigs"
-    [formGroup]="formGroup"
-  ></app-dynamic-form>
+<div class="container-fluid">
+  <main role="main">
+    <app-dynamic-form
+      [dynamicConfigs]="dynamicConfigs"
+      [formGroup]="formGroup"
+    ></app-dynamic-form>
+  </main>
 </div>
