@@ -6,11 +6,14 @@ import {
   ViewContainerRef
 } from "@angular/core";
 import { FormGroup } from "@angular/forms";
-import { GridComponent, GridConfigType } from "../configuration/grid-config";
+import {
+  StructureComponent,
+  StructureConfigType
+} from "../configuration/structure-config";
 
-@Directive({ selector: "[appGridDirective]" })
-export class GridDirective implements OnInit {
-  public gridConfigs: GridConfigType[];
+@Directive({ selector: "[appStructureDirective]" })
+export class StructureDirective implements OnInit {
+  public structureConfigs: StructureConfigType[];
   public formGroup: FormGroup;
 
   constructor(
@@ -19,24 +22,24 @@ export class GridDirective implements OnInit {
   ) {}
 
   public ngOnInit() {
-    this.gridConfigs.forEach((dynamicConfig: GridConfigType) => {
-      const component = GridComponent.getComponent(dynamicConfig);
+    this.structureConfigs.forEach((structureConfig: StructureConfigType) => {
+      const component = StructureComponent.getComponent(structureConfig);
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(
         component
       );
       const componentRef = this.container.createComponent(componentFactory);
-      componentRef.instance.gridConfig = dynamicConfig as GridConfigType;
+      componentRef.instance.structureConfig = structureConfig as StructureConfigType;
       componentRef.instance.formGroup = this.formGroup;
     });
   }
 
   @Input()
-  public set appGridDirective(value: {
-    gridConfigs: GridConfigType[];
+  public set appStructureDirective(value: {
+    structureConfigs: StructureConfigType[];
     formGroup: FormGroup;
   }) {
-    const { gridConfigs, formGroup } = value;
-    this.gridConfigs = gridConfigs;
+    const { structureConfigs, formGroup } = value;
+    this.structureConfigs = structureConfigs;
     this.formGroup = formGroup;
   }
 }

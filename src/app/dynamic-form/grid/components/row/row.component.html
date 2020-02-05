@@ -1,9 +1,9 @@
 <div class="row">
-  <ng-container *ngFor="let dynamicConfig of dynamicConfigs">
-    <div class="mb-2" [ngClass]="getColClass(dynamicConfig)">
+  <ng-container *ngFor="let fieldsConfig of gridConfig.fields">
+    <div class="mb-2" [ngClass]="getColClass(fieldsConfig)">
       <ng-container
         *appFieldDirective="{
-          fieldConfig: dynamicConfig,
+          fieldConfig: fieldsConfig,
           formGroup: formGroup
         }"
       ></ng-container>

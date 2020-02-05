@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <main role="main">
+    <div class="card">
+      <h5 class="card-header">{{ structureConfig.header }}</h5>
+      <div class="card-body">
+        <ng-container
+          *appGridDirective="{
+            gridConfigs: structureConfig.grids,
+            formGroup: formGroup
+          }"
+        ></ng-container>
+      </div>
+    </div>
+  </main>
+</div>
